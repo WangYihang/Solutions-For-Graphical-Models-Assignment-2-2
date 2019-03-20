@@ -64,16 +64,21 @@ def assignment_2_b(filename):
     return result
 
 def print_matrix(data, columns=10):
+    frequency = 0
     counter = 0
     for i in data:
         if counter % columns == 0 and counter != 0:
             printer("\n")
         if valid_word(i):
+            frequency += 1
             printer(colored(i, 'green'))
         else:
             printer(i)
         printer("\t")
         counter += 1
+    printer("\n")
+    printer("Probability: %f" % (frequency / 100.0))
+    printer("\n")
     printer("\n")
 
 
